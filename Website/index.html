@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Currency Converter</title>
+    <meta name="description" content="A beautiful and dynamic currency converter supporting multiple global currencies.">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    <main class="converter-container" id="app-container">
+        <header>
+            <h1>Currency Converter</h1>
+            <p>Real-time exchange rates at your fingertips.</p>
+        </header>
+        
+        <div class="converter-card" id="converter-card">
+            <div class="amount-group">
+                <label for="amount">Amount</label>
+                <div class="input-wrapper">
+                    <span class="currency-symbol" id="from-symbol">₹</span>
+                    <input type="number" id="amount" value="1000" min="0" step="any">
+                </div>
+            </div>
+
+            <div class="currency-selection">
+                <div class="select-group">
+                    <label for="from-currency">From</label>
+                    <div class="custom-select">
+                        <img src="https://flagsapi.com/IN/flat/32.png" id="from-flag" alt="From Flag" onerror="this.src='https://via.placeholder.com/32?text=F'">
+                        <select id="from-currency">
+                            <!-- Options injected by JS -->
+                        </select>
+                    </div>
+                </div>
+
+                <button class="swap-btn" id="swap-btn" aria-label="Swap Currencies" title="Swap Currencies">
+                    <i class="fa-solid fa-right-left"></i>
+                </button>
+
+                <div class="select-group">
+                    <label for="to-currency">To</label>
+                    <div class="custom-select">
+                        <img src="https://flagsapi.com/US/flat/32.png" id="to-flag" alt="To Flag" onerror="this.src='https://via.placeholder.com/32?text=T'">
+                        <select id="to-currency">
+                            <!-- Options injected by JS -->
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="result-area">
+                <div class="loader" id="loader"></div>
+                <div class="result-content" id="result-content">
+                    <h2 class="converted-amount" id="converted-amount">Loading...</h2>
+                    <p class="conversion-rate" id="conversion-rate">Please wait while we fetch the rates</p>
+                </div>
+            </div>
+            
+            <p class="last-updated" id="last-updated"></p>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
